@@ -1,0 +1,22 @@
+# Зависимости Node.js (если появятся)
+node_modules/
+
+# Системные файлы Windows
+Thumbs.db
+desktop.ini
+
+# Системные файлы macOS
+.DS_Store
+
+# Переменные окружения (секреты — НИКОГДА не коммитить!)
+.env
+.env.local
+
+# Логи
+*.log
+logs/
+
+# Временные файлы редакторов
+*.swp
+*.tmp
+.vscode/settings.json
