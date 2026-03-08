@@ -1,0 +1,51 @@
+name: CI — Проверка проекта
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check:
+    name: Проверка файлов проекта
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Получить код из репозитория
+        uses: actions/checkout@v4
+
+      - name: ✅ Проверить что index.html существует
+        run: |
+          if [ -f index.html ]; then
+            echo "✅ index.html найден"
+          else
+            echo "❌ index.html не найден!"
+            exit 1
+          fi
+
+      - name: ✅ Проверить что about.html существует
+        run: |
+          if [ -f about.html ]; then
+            echo "✅ about.html найден"
+          else
+            echo "❌ about.html не найден!"
+            exit 1
+          fi
+
+      - name: ✅ Проверить что README.md существует
+        run: |
+          if [ -f README.md ]; then
+            echo "✅ README.md найден"
+          else
+            echo "❌ README.md не найден!"
+            exit 1
+          fi
+
+      - name: 📊 Показать структуру проекта
+        run: |
+          echo "=== Файлы проекта ==="
+          ls -la
+          echo ""
+          echo "=== Размер файлов ==="
+          wc -l *.html *.css *.md
