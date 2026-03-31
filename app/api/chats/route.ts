@@ -10,7 +10,7 @@ export async function GET() {
 
     const { db } = await connectToDatabase();
 
-    // Fetch all chat histories - TEST
+    // Fetch all chat histories  1233333333333333333333333
     const histories = await db.collection('treema_chat_history').find({}).toArray();
     const chatIds = histories.map(h => h.sessionId);
 
