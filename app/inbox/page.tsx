@@ -31,7 +31,7 @@ interface Message {
 // i18n Dictionary
 const dict = {
     ru: {
-        inbox: 'TSA Inbox',
+        inbox: 'TSA Inbox - test',
         support: 'Treema Support',
         activeChats: 'Активные чаты',
         noActive: 'Нет активных HITL чатов',
